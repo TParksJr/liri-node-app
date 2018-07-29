@@ -17,6 +17,8 @@ for (var i = 3; i < nodeArg.length; i++) {
     nodeArr.push(nodeArg[i]);
 };
 var nodeValue = nodeArr.join("+");
+
+//variables for OMDB API call
 var queryUrl = "http://www.omdbapi.com/?t=" + nodeValue + "&y=&plot=short&apikey=trilogy";
 var options = {  
     url: queryUrl,
@@ -27,11 +29,12 @@ var options = {
 function tweets() {
     console.log("tweetsDone");
     var params = {screen_name: 'screenName'};
-    client.get("statuses/user_timeline", params, function(err, tweets, response) {
+    client.get("statuses/user_timeline", params, function(err, tweets, res) {
     if (err) {
-        console.log("Error occurred: " + err);
+        console.log("Error occurred: " + JSON.parse(err));
     } else {
-        console.log(response);
+        console.log(res);
+        console.log(tweets);
     };
 });
 };
@@ -46,9 +49,7 @@ function spotifySong() {
         if (err) {
           console.log("Error occurred: " + err);
         } else {
-            //console.log("*********************************")
-            //console.log(JSON.stringify(data, null, 2));
-            //console.log("*********************************")
+            console.log("*********************************");
             for (i = 0; i < data.tracks.items.length; i++) {
                 console.log("Result # " + (i + 1));
                 console.log("Artist: " + data.tracks.items[i].artists[0].name);
@@ -69,6 +70,7 @@ function movie() {
             console.log("Error occurred: " + err);
         } else {
             var json = JSON.parse(body);
+            console.log("*********************************");
             console.log("Title: " + json.Title);
             console.log("Director: " + json.Director);
             console.log("Release date: " + json.Released);
@@ -77,6 +79,7 @@ function movie() {
             console.log("Plot: " + json.Plot);
             console.log("Cast: " + json.Actors);
             console.log("Ratings: \n  IMDB: " + json.Ratings[0].Value + "\n  Rotten Tomatoes: " + json.Ratings[1].Value + "\n  Metacritic: " + json.Ratings[2].Value);
+            console.log("*********************************");
         };
     });
 };
@@ -102,7 +105,7 @@ function command() {
             } else if (dataArr[0] == "movie-this") {
                 movie();
             } else {
-                console.log("Suprise!")
+                console.log("Error occured");
             };
         };
     });
@@ -112,7 +115,7 @@ function command() {
 if (action == "my-tweets") {
     console.log("tweets");
     tweets();
-} else if (action == "spotify-this-song") {
+} else if (action == "spotify-this-song" || "spotify-this" || "spotify") {
     //console.log("spotify");
     spotifySong();
 } else if (action == "movie-this") {
