@@ -4,10 +4,10 @@ var keys = require("./keys");
 var request = require("request");
 var Spotify = require('node-spotify-api');
 var Twitter = require('twitter');
-//var fs = require("fs");
+var fs = require("fs");
 //var inquirer = require("inquirer");
 var spotify = new Spotify(keys.spotify);
-//var client = new Twitter(keys.twitter);
+var client = new Twitter(keys.twitter);
 
 //organize argv arguments
 var action = process.argv[2];
@@ -23,10 +23,20 @@ var options = {
     method: "GET",
 };
 
+//functions for my-tweets
 function tweets() {
     console.log("tweetsDone");
+    var params = {screen_name: 'screenName'};
+    client.get("statuses/user_timeline", params, function(err, tweets, response) {
+    if (err) {
+        console.log("Error occurred: " + err);
+    } else {
+        console.log(response);
+    };
+});
 };
 
+//function for spotify-this-song
 function spotifySong() {
     //console.log("spotifyDone");
     spotify.search({ 
@@ -52,6 +62,7 @@ function spotifySong() {
     });
 };
 
+//function for movie-this
 function movie() {
     request(options, function(err, res, body) {
         if (err){
@@ -70,10 +81,34 @@ function movie() {
     });
 };
 
+//function for do-what-it-says
 function command() {
     console.log("commandDone");
+    fs.readFile("random.txt", "utf8", function(err, data) {
+        if (err) {
+            console.log("Error occurred: " + err);
+        } else {
+            console.log(data);
+            var dataArr = data.split(",");
+            console.log(dataArr);
+            for (var i = 1; i < dataArr.length; i++) {
+                nodeArr.push(dataArr[i]);
+            };
+            nodeValue = nodeArr.join("+");
+            if (dataArr[0] == "my-tweets") {
+                tweets();
+            } else if (dataArr[0] == "spotify-this-song") {
+                spotifySong();
+            } else if (dataArr[0] == "movie-this") {
+                movie();
+            } else {
+                console.log("Suprise!")
+            };
+        };
+    });
 };
 
+//parsing action argument
 if (action == "my-tweets") {
     console.log("tweets");
     tweets();
@@ -81,7 +116,7 @@ if (action == "my-tweets") {
     //console.log("spotify");
     spotifySong();
 } else if (action == "movie-this") {
-    console.log("movie");
+    //console.log("movie");
     movie();
 } else if (action == "do-what-it-says") {
     console.log("command");
