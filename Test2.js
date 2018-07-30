@@ -3440,35 +3440,245 @@ var json = {
         "total": 416
     }
 }
-var json2 = { 
-Title: 'Remember the Titans',
-Year: '2000',
-Rated: 'PG',
-Released: '29 Sep 2000',
-Runtime: '113 min',
-Genre: 'Biography, Drama, Sport',
-Director: 'Boaz Yakin',
-Writer: 'Gregory Allen Howard',
-Actors: 'Denzel Washington, Will Patton, Wood Harris, Ryan Hurst',
-Plot: 'The true story of a newly appointed African-American coach and his high school team on their first season as a racially integrated unit.',
-Language: 'English',
-Country: 'USA',
-Awards: '8 wins & 17 nominations.',
-Poster: 'https://m.media-amazon.com/images/M/MV5BYThkMzgxNjEtMzFiOC00MTI0LWI5MDItNDVmYjA4NzY5MDQ2L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
-Ratings: 
- [ { Source: 'Internet Movie Database', Value: '7.8/10' },
-   { Source: 'Rotten Tomatoes', Value: '73%' },
-   { Source: 'Metacritic', Value: '48/100' } ],
-Metascore: '48',
-imdbRating: '7.8',
-imdbVotes: '177,962',
-imdbID: 'tt0210945',
-Type: 'movie',
-DVD: '20 Mar 2001',
-BoxOffice: '$114,297,071',
-Production: 'Walt Disney Pictures',
-Website: 'http://disney.go.com/disneypictures/rememberthetitans/index.html',
-Response: 'True' };
+var json2 = {
+    Title: 'Remember the Titans',
+    Year: '2000',
+    Rated: 'PG',
+    Released: '29 Sep 2000',
+    Runtime: '113 min',
+    Genre: 'Biography, Drama, Sport',
+    Director: 'Boaz Yakin',
+    Writer: 'Gregory Allen Howard',
+    Actors: 'Denzel Washington, Will Patton, Wood Harris, Ryan Hurst',
+    Plot: 'The true story of a newly appointed African-American coach and his high school team on their first season as a racially integrated unit.',
+    Language: 'English',
+    Country: 'USA',
+    Awards: '8 wins & 17 nominations.',
+    Poster: 'https://m.media-amazon.com/images/M/MV5BYThkMzgxNjEtMzFiOC00MTI0LWI5MDItNDVmYjA4NzY5MDQ2L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+    Ratings:
+        [{ Source: 'Internet Movie Database', Value: '7.8/10' },
+        { Source: 'Rotten Tomatoes', Value: '73%' },
+        { Source: 'Metacritic', Value: '48/100' }],
+    Metascore: '48',
+    imdbRating: '7.8',
+    imdbVotes: '177,962',
+    imdbID: 'tt0210945',
+    Type: 'movie',
+    DVD: '20 Mar 2001',
+    BoxOffice: '$114,297,071',
+    Production: 'Walt Disney Pictures',
+    Website: 'http://disney.go.com/disneypictures/rememberthetitans/index.html',
+    Response: 'True'
+};
+
+var json3 = {
+    "statusCode": 200,
+    "body": "[]",
+    "headers": {
+        "cache-control": "no-cache, no-store, must-revalidate, pre-check=0, post-check=0",
+        "connection": "close",
+        "content-disposition": "attachment; filename=json.json",
+        "content-length": "2",
+        "content-type": "application/json;charset=utf-8",
+        "date": "Mon, 30 Jul 2018 13:26:19 GMT",
+        "expires": "Tue, 31 Mar 1981 05:00:00 GMT",
+        "last-modified": "Mon, 30 Jul 2018 13:26:19 GMT",
+        "pragma": "no-cache",
+        "server": "tsa_b",
+        "set-cookie": [
+            "personalization_id=\"v1_omG+OmwvPhTT9wRr7L4NsA==\"; Expires=Wed, 29 Jul 2020 13:26:19 GMT; Path=/; Domain=.twitter.com",
+            "lang=en; Path=/",
+            "guest_id=v1%3A153295717980260294; Expires=Wed, 29 Jul 2020 13:26:19 GMT; Path=/; Domain=.twitter.com"
+        ],
+        "status": "200 OK",
+        "strict-transport-security": "max-age=631138519",
+        "x-access-level": "read-write",
+        "x-connection-hash": "c31d653f3dff85c6b6f51e1e68d1e278",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "x-rate-limit-limit": "900",
+        "x-rate-limit-remaining": "893",
+        "x-rate-limit-reset": "1532957495",
+        "x-response-time": "29",
+        "x-transaction": "009bfbc400764ad0",
+        "x-twitter-response-tags": "BouncerCompliant",
+        "x-xss-protection": "1; mode=block; report=https://twitter.com/i/xss_report"
+    },
+    "request": {
+        "uri": {
+            "protocol": "https:",
+            "slashes": true,
+            "auth": null,
+            "host": "api.twitter.com",
+            "port": null,
+            "hostname": "api.twitter.com",
+            "hash": null,
+            "search": "?screen_name=Tyson95370051",
+            "query": "screen_name=Tyson95370051",
+            "pathname": "/1.1/statuses/user_timeline.json",
+            "path": "/1.1/statuses/user_timeline.json?screen_name=Tyson95370051",
+            "href": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=Tyson95370051"
+        },
+        "method": "get",
+        "headers": {
+            "Accept": "*/*",
+            "Connection": "close",
+            "User-Agent": "node-twitter/1.7.1",
+            "Authorization": "OAuth oauth_consumer_key=\"TZ2HoUQtMTUWSnTOW0CdI6aLv\",oauth_nonce=\"e4e512c73e2847f285c90481459da29d\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1532957179\",oauth_token=\"1023658307003797504-HNMQKKx4IHBu2WYPSClygLjk2WTWFh\",oauth_version=\"1.0\",oauth_signature=\"fL9KMGCgCQITKMtFuHXTFmpR4Ws%3D\"",
+            "content-length": 0
+        }
+    }
+}
+
+var json4 = {
+    "statusCode": 200,
+    "body": "[{\"created_at\":\"Mon Jul 30 13:32:51 +0000 2018\",\"id\":1023924383772012544,\"id_str\":\"1023924383772012544\",\"text\":\"Just setting up my Twitter. #myfirstTweet\",\"truncated\":false,\"entities\":{\"hashtags\":[{\"text\":\"myfirstTweet\",\"indices\":[28,41]}],\"symbols\":[],\"user_mentions\":[],\"urls\":[]},\"source\":\"\\u003ca href=\\\"http:\\/\\/twitter.com\\\" rel=\\\"nofollow\\\"\\u003eTwitter Web Client\\u003c\\/a\\u003e\",\"in_reply_to_status_id\":null,\"in_reply_to_status_id_str\":null,\"in_reply_to_user_id\":null,\"in_reply_to_user_id_str\":null,\"in_reply_to_screen_name\":null,\"user\":{\"id\":1023658307003797504,\"id_str\":\"1023658307003797504\",\"name\":\"Tyson P\",\"screen_name\":\"TysonP26266068\",\"location\":\"\",\"description\":\"\",\"url\":null,\"entities\":{\"description\":{\"urls\":[]}},\"protected\":false,\"followers_count\":0,\"friends_count\":0,\"listed_count\":0,\"created_at\":\"Sun Jul 29 19:55:33 +0000 2018\",\"favourites_count\":0,\"utc_offset\":null,\"time_zone\":null,\"geo_enabled\":false,\"verified\":false,\"statuses_count\":1,\"lang\":\"en\",\"contributors_enabled\":false,\"is_translator\":false,\"is_translation_enabled\":false,\"profile_background_color\":\"F5F8FA\",\"profile_background_image_url\":null,\"profile_background_image_url_https\":null,\"profile_background_tile\":false,\"profile_image_url\":\"http:\\/\\/abs.twimg.com\\/sticky\\/default_profile_images\\/default_profile_normal.png\",\"profile_image_url_https\":\"https:\\/\\/abs.twimg.com\\/sticky\\/default_profile_images\\/default_profile_normal.png\",\"profile_link_color\":\"1DA1F2\",\"profile_sidebar_border_color\":\"C0DEED\",\"profile_sidebar_fill_color\":\"DDEEF6\",\"profile_text_color\":\"333333\",\"profile_use_background_image\":true,\"has_extended_profile\":false,\"default_profile\":true,\"default_profile_image\":true,\"following\":false,\"follow_request_sent\":false,\"notifications\":false,\"translator_type\":\"none\"},\"geo\":null,\"coordinates\":null,\"place\":null,\"contributors\":null,\"is_quote_status\":false,\"retweet_count\":0,\"favorite_count\":0,\"favorited\":false,\"retweeted\":false,\"lang\":\"en\"}]",
+    "headers": {
+      "cache-control": "no-cache, no-store, must-revalidate, pre-check=0, post-check=0",
+      "connection": "close",
+      "content-disposition": "attachment; filename=json.json",
+      "content-length": "1942",
+      "content-type": "application/json;charset=utf-8",
+      "date": "Mon, 30 Jul 2018 13:33:38 GMT",
+      "expires": "Tue, 31 Mar 1981 05:00:00 GMT",
+      "last-modified": "Mon, 30 Jul 2018 13:33:38 GMT",
+      "pragma": "no-cache",
+      "server": "tsa_b",
+      "set-cookie": [
+        "personalization_id=\"v1_t7cG3DJ5NBtF9b+qHkjCBA==\"; Expires=Wed, 29 Jul 2020 13:33:38 GMT; Path=/; Domain=.twitter.com",
+        "lang=en; Path=/",
+        "guest_id=v1%3A153295761860643084; Expires=Wed, 29 Jul 2020 13:33:38 GMT; Path=/; Domain=.twitter.com"
+      ],
+      "status": "200 OK",
+      "strict-transport-security": "max-age=631138519",
+      "x-access-level": "read-write",
+      "x-connection-hash": "52d692e50333bac48be04a677bd81c68",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "SAMEORIGIN",
+      "x-rate-limit-limit": "900",
+      "x-rate-limit-remaining": "898",
+      "x-rate-limit-reset": "1532958450",
+      "x-response-time": "88",
+      "x-transaction": "0024f1f4008ff188",
+      "x-twitter-response-tags": "BouncerCompliant",
+      "x-xss-protection": "1; mode=block; report=https://twitter.com/i/xss_report"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "api.twitter.com",
+        "port": null,
+        "hostname": "api.twitter.com",
+        "hash": null,
+        "search": "?screen_name=TysonP26266068",
+        "query": "screen_name=TysonP26266068",
+        "pathname": "/1.1/statuses/user_timeline.json",
+        "path": "/1.1/statuses/user_timeline.json?screen_name=TysonP26266068",
+        "href": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=TysonP26266068"
+      },
+      "method": "get",
+      "headers": {
+        "Accept": "*/*",
+        "Connection": "close",
+        "User-Agent": "node-twitter/1.7.1",
+        "Authorization": "OAuth oauth_consumer_key=\"TZ2HoUQtMTUWSnTOW0CdI6aLv\",oauth_nonce=\"ae3a3ffed3084fe387a33b2fa909c939\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1532957618\",oauth_token=\"1023658307003797504-HNMQKKx4IHBu2WYPSClygLjk2WTWFh\",oauth_version=\"1.0\",oauth_signature=\"8kw5fQl4zKc%2FzvKzaJgimyebttg%3D\"",
+        "content-length": 0
+      }
+    }
+  }
+  
+var json5 = [
+    {
+      "created_at": "Mon Jul 30 13:32:51 +0000 2018",
+      "id": 1023924383772012500,
+      "id_str": "1023924383772012544",
+      "text": "Just setting up my Twitter. #myfirstTweet",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "myfirstTweet",
+            "indices": [
+              28,
+              41
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1023658307003797500,
+        "id_str": "1023658307003797504",
+        "name": "Tyson P",
+        "screen_name": "TysonP26266068",
+        "location": "",
+        "description": "",
+        "url": null,
+        "entities": {
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 0,
+        "friends_count": 0,
+        "listed_count": 0,
+        "created_at": "Sun Jul 29 19:55:33 +0000 2018",
+        "favourites_count": 0,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 1,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": null,
+        "profile_background_image_url_https": null,
+        "profile_background_tile": false,
+        "profile_image_url": "http://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "profile_image_url_https": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": true,
+        "default_profile_image": true,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none"
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    }
+  ]
+  
 
 console.log(json);
 console.log(json2);
+console.log(json3);
+console.log(json4);
+console.log(json5);

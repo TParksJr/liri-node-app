@@ -5,12 +5,12 @@ var request = require("request");
 var Spotify = require('node-spotify-api');
 var Twitter = require('twitter');
 var fs = require("fs");
-//var inquirer = require("inquirer");
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
 
 //organize argv arguments
 var action = process.argv[2];
+var arg1 = process.argv[3]
 var nodeArg = process.argv
 var nodeArr = [];
 for (var i = 3; i < nodeArg.length; i++) {
@@ -27,21 +27,21 @@ var options = {
 
 //functions for my-tweets
 function tweets() {
-    console.log("tweetsDone");
-    var params = {screen_name: 'screenName'};
+    var params = {screen_name: "TysonP26266068"};
     client.get("statuses/user_timeline", params, function(err, tweets, res) {
     if (err) {
-        console.log("Error occurred: " + JSON.parse(err));
+        console.log("Error occurred: " + (err));
     } else {
-        console.log(res);
-        console.log(tweets);
+        for (var i = 0; i < tweets.length; i++) {
+            console.log("Tweets: \n  Tweet #" + (i + 1) + "\n  Text: " + tweets[i].text + "\n  Created on: " + tweets[i].created_at);
+            console.log("*********************************");
+        };
     };
 });
 };
 
 //function for spotify-this-song
 function spotifySong() {
-    //console.log("spotifyDone");
     spotify.search({ 
         type: "track",
         query: nodeValue
@@ -86,14 +86,11 @@ function movie() {
 
 //function for do-what-it-says
 function command() {
-    console.log("commandDone");
     fs.readFile("random.txt", "utf8", function(err, data) {
         if (err) {
             console.log("Error occurred: " + err);
         } else {
-            console.log(data);
             var dataArr = data.split(",");
-            console.log(dataArr);
             for (var i = 1; i < dataArr.length; i++) {
                 nodeArr.push(dataArr[i]);
             };
@@ -113,17 +110,28 @@ function command() {
 
 //parsing action argument
 if (action == "my-tweets") {
-    console.log("tweets");
     tweets();
-} else if (action == "spotify-this-song" || "spotify-this" || "spotify") {
-    //console.log("spotify");
-    spotifySong();
+} else if (action == "spotify-this-song") {
+    if (arg1 === undefined) {
+        nodeValue = "the+sign+ace+of+base";
+        spotifySong();
+    } else {
+        spotifySong();
+    };
 } else if (action == "movie-this") {
-    //console.log("movie");
-    movie();
+    if (arg1 === undefined) {
+        nodeValue = "mr+nobody";
+        queryUrl = "http://www.omdbapi.com/?t=" + nodeValue + "&y=&plot=short&apikey=trilogy";
+        options = {  
+            url: queryUrl,
+            method: "GET",
+        };
+        movie();
+    } else {
+        movie();
+    };
 } else if (action == "do-what-it-says") {
-    console.log("command");
     command();
 } else {
-    console.log("Invalid entry");
+    console.log("Invalid command");
 };
