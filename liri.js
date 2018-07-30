@@ -36,6 +36,13 @@ function tweets() {
             console.log("Tweets: \n  Tweet #" + (i + 1) + "\n  Text: " + tweets[i].text + "\n  Created on: " + tweets[i].created_at);
             console.log("*********************************");
         };
+        fs.appendFile("log.txt", "\nChecked Tweets - " + new Date(), function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("log.txt was updated!");
+            };
+        });
     };
 });
 };
@@ -59,6 +66,13 @@ function spotifySong() {
                 console.log("Link to song: " + data.tracks.items[i].external_urls.spotify);
                 console.log("*********************************");
             };
+            fs.appendFile("log.txt", "\nSpotified " + nodeValue + " - " + new Date(), function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("log.txt was updated!");
+                };
+            });
         }; 
     });
 };
@@ -80,6 +94,13 @@ function movie() {
             console.log("Cast: " + json.Actors);
             console.log("Ratings: \n  IMDB: " + json.Ratings[0].Value + "\n  Rotten Tomatoes: " + json.Ratings[1].Value + "\n  Metacritic: " + json.Ratings[2].Value);
             console.log("*********************************");
+            fs.appendFile("log.txt", "\nOMBDed " + nodeValue + " - " + new Date(), function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("log.txt was updated!");
+                };
+            });
         };
     });
 };
@@ -104,6 +125,13 @@ function command() {
             } else {
                 console.log("Error occured");
             };
+            fs.appendFile("log.txt", "\nUsed do-what-it-says - " + new Date(), function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("log.txt was updated!");
+                };
+            });
         };
     });
 };
