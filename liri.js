@@ -10,8 +10,8 @@ var client = new Twitter(keys.twitter);
 
 //organize argv arguments
 var action = process.argv[2];
-var arg1 = process.argv[3]
-var nodeArg = process.argv
+var arg1 = process.argv[3];
+var nodeArg = process.argv;
 var nodeArr = [];
 for (var i = 3; i < nodeArg.length; i++) {
     nodeArr.push(nodeArg[i]);
